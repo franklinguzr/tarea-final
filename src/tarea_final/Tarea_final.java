@@ -25,25 +25,7 @@ public class Tarea_final {
 
         573503434311|573558371234|10
         */
-      /*
-        archivos a= new archivos();
-        String b=a.leerTXT("C:\\Users\\Garces Usma\\Desktop\\fran\\basura\\basura.txt");
-       // char temp=b.charAt(16);
-        int aux1,aux2;
-     
-     int i=0;    
-     
-       while(i<b.length()){
-        System.out.println(b.charAt(i));
-       i++;
-          
-       }
-       */
-       // System.out.println(b);
-     
-        
         MatrizAdya mat= new MatrizAdya();
-        
         mat.insertarLlamda("1", "7");
         mat.insertarLlamda("1", "2");
         mat.insertarLlamda("1", "3");

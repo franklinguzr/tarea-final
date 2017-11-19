@@ -24,8 +24,8 @@ public class Tarea_final {
         573678322362|573503434311|1
 
         573503434311|573558371234|10
-        */
-        MatrizAdya mat= new MatrizAdya();
+         */
+        MatrizAdya mat = new MatrizAdya();
         mat.insertarLlamda("1", "7");
         mat.insertarLlamda("1", "2");
         mat.insertarLlamda("1", "3");
@@ -40,14 +40,13 @@ public class Tarea_final {
         mat.insertarLlamda("7", "8");
         mat.insertarLlamda("9", "8");
         mat.insertarLlamda("9", "6");
-       
-    
-        
-        
+        mat.getMatriz1().mostrar();
+        MatrizCostos costo = new MatrizCostos();
+        costo.crearCostosLL(mat.getMatriz1(), mat.getIndice());
+        costo.crearCostos(mat.getMatriz(), mat.getIndice());
+        System.out.println("---");
+        costo.getPeso1().mostrar();
+
     }
-    
-   
-   
-    
-    
+
 }

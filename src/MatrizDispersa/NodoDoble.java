@@ -5,19 +5,24 @@
  */
 package MatrizDispersa;
 
+import javax.swing.text.Element;
+
 /**
  *
  * @author Garces Usma
  */
-public class NodoDoble {
+public class NodoDoble <E>{
     private NodoDoble ligaIzq;
     private NodoDoble ligaDer;
     private Tripleta tri;
-
+   
     public NodoDoble() {
+        this.ligaDer=null;
+        this.ligaIzq=null;
+        this.tri=null;
     }
-
-    public NodoDoble(int fila, int columna, int valor) {
+    
+    public NodoDoble(int fila, int columna, E valor) {
         this.tri= new Tripleta(fila,columna,valor);
        this.ligaDer=this.ligaIzq=null;
     }

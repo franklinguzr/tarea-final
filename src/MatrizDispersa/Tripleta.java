@@ -9,12 +9,13 @@ package MatrizDispersa;
  *
  * @author Garces Usma
  */
-public class Tripleta {
+public class Tripleta<E> {
+
     private int fila;
     private int Columna;
-    private int valor;
+    private E valor;
 
-    public Tripleta(int fila, int Columna, int valor) {
+    public Tripleta(int fila, int Columna, E valor) {
         this.fila = fila;
         this.Columna = Columna;
         this.valor = valor;
@@ -39,13 +40,12 @@ public class Tripleta {
         this.Columna = Columna;
     }
 
-    public int getValor() {
+    public E getValor() {
         return valor;
     }
 
-    public void setValor(int valor) {
+    public void setValor(E valor) {
         this.valor = valor;
     }
-    
-    
+
 }

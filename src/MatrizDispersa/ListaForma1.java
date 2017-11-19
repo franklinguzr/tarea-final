@@ -159,7 +159,6 @@ public class ListaForma1<E> implements Serializable {
      public NodoDoble retornaNodo(int f, int c) {
         int qf, qc;
         NodoDoble p, q,retorno=null;
-        
         Tripleta tp, tq;
         p = primerNodo();
         while (!finRecorrido(p)) {
@@ -179,5 +178,28 @@ public class ListaForma1<E> implements Serializable {
         }
         return retorno;
     }
-
+ public int retornaDatoMCostos(int f, int c) {
+        int qf, qc, qv = -1;
+        NodoDoble p, q;
+        Tripleta tp, tq;
+        p = primerNodo();
+        while (!finRecorrido(p)) {
+            q = p.getLigaDer();
+            while (q != p) {
+                tq = (Tripleta) q.getTri();
+                qf = tq.getFila();
+                qc = tq.getColumna();
+                if (qf == f && qc == c) {
+                    qv = (int) tq.getValor();
+                }
+                q = q.getLigaDer();
+            }
+            tp = p.getTri();
+            p = (NodoDoble) tp.getValor();
+        }
+        return qv;
+    }
+     
+     
+     
 }

@@ -13,9 +13,7 @@ import java.util.LinkedList;
  * @author Garces Usma
  */
 public class ListaForma1<E> implements Serializable {
-
     private NodoDoble cab;
-
     public ListaForma1(int fila, int columna) {
         cab = new NodoDoble(fila, columna, null);
         this.cab.getTri().setValor(cab);
@@ -54,7 +52,6 @@ public class ListaForma1<E> implements Serializable {
             ult.setLigaDer(ult);
             ult.setLigaIzq(ult);
         }
-
     }
 
     public void conectarFilas(NodoDoble x) {
@@ -168,7 +165,6 @@ public class ListaForma1<E> implements Serializable {
                 qf = tq.getFila();
                 qc = tq.getColumna();
                 if (qf == f && qc == c) {
-                    
                     retorno=q;
                 }
                 q = q.getLigaDer();
@@ -199,7 +195,27 @@ public class ListaForma1<E> implements Serializable {
         }
         return qv;
     }
-     
+      public int cantLlamadas(int f) {
+        int qf, qc, qv = 0;
+        NodoDoble p, q;
+        Tripleta tp, tq;
+        p = primerNodo();
+        while (!finRecorrido(p)) {
+            q = p.getLigaDer();
+            if(q.getTri().getFila()==f){
+            while (q != p) {
+                tq = (Tripleta) q.getTri();
+                qf = tq.getFila();
+                qc = tq.getColumna();
+                qv ++;
+                q = q.getLigaDer();
+            }
+        }
+            tp = p.getTri();
+            p = (NodoDoble) tp.getValor();
+        }
+       return qv;
+    }
      
      
 }

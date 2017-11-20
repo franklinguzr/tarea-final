@@ -41,6 +41,7 @@ public class NewClass {
         }
 
         a.mostrar();
+        System.out.println(a.cantLlamadas(3));
 
     }
 }

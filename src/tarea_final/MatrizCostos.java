@@ -8,13 +8,13 @@ package tarea_final;
 import MatrizDispersa.ListaForma1;
 import MatrizDispersa.NodoDoble;
 import MatrizDispersa.Tripleta;
+import java.io.Serializable;
 
 /**
  *
  * @author Garces Usma
  */
-public class MatrizCostos {
-
+public class MatrizCostos implements Serializable{
     private String[] indice;
     private int[][] peso;
     private ListaForma1 peso1;
@@ -66,10 +66,8 @@ public class MatrizCostos {
                     if ((matrizPeso.retornaDato(i, k) != 0)
                             && (matrizPeso.retornaDato(k, j) != 0)
                             && (i != j)) {
-
                         if ((matrizPeso.retornaDato(i, j) > matrizPeso.retornaDato(i, k) + 1) || (matrizPeso.retornaDato(i, j) == 0)) {
-                         
-                           if(matrizPeso.retornaNodo(i, j)!=null){
+                         if(matrizPeso.retornaNodo(i, j)!=null){
                             NodoDoble x;
                             x=matrizPeso.retornaNodo(i, j);
                             Tripleta t=new Tripleta(i,j,(matrizPeso.retornaDato(i, k) + 1));
@@ -93,12 +91,10 @@ public class MatrizCostos {
         int a = adya.length;
         int matrizPeso[][];
         matrizPeso = adya;
-
         for (int k = 0; k < a; k++) {
             for (int i = 0; i < a; i++) {
                 for (int j = 0; j < a; j++) {
                     if ((matrizPeso[i][k] != 0) && (matrizPeso[k][j] != 0) && (i != j)) {
-
                         if ((matrizPeso[i][j] > matrizPeso[i][k] + 1) || (matrizPeso[i][j] == 0)) {
                             matrizPeso[i][j] = matrizPeso[i][k] + 1;
                         }
@@ -108,5 +104,4 @@ public class MatrizCostos {
         }
         this.peso = matrizPeso;
     }
-
 }

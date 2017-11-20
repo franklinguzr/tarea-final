@@ -9,12 +9,13 @@ import MatrizDispersa.ListaForma1;
 import MatrizDispersa.NodoDoble;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.Serializable;
 
 /**
  *
  * @author Garces Usma
  */
-public class MatrizAdya {
+public class MatrizAdya implements Serializable {
     
     private String[] indice;
     private int[][] matriz;
@@ -141,8 +142,16 @@ public class MatrizAdya {
         for (int i = 0; i < indice.length; i++) {
             retorno = retorno + '\n' + indice[i];
         }
-        
         return retorno;
     }
+    public int cantidadLLamadas(String numero){
+     int cont=0,i=0;
+    
+     while(!numero.equals(this.indice[i])){
+     i++;
+     }
+     cont=this.Matriz1.cantLlamadas(i);
+     return cont;
+     }
     
 }
